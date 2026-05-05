@@ -4,9 +4,9 @@ This file is the project context for Claude Code. Treat it as authoritative for 
 
 ## Project
 
-Internal IT ticketing tool, built as a parallel/replacement layer over what we use day-to-day at work (ServiceNow). The goal is felt smoothness and quality-of-life features the existing system doesn't deliver — particularly around speed, keyboard/screen-reader accessibility, and templated workflows for common ticket actions.
+Internal IT ticketing tool, built as a parallel/replacement layer over an existing enterprise ticketing system. The goal is felt smoothness and quality-of-life features the existing system doesn't deliver — particularly around speed, keyboard/screen-reader accessibility, and templated workflows for common ticket actions.
 
-Built for me and my team. A supervisor may see it; a small pilot is possible. The repo will be public on GitHub, but the project is **not** designed around an imagined recruiter or interviewer — portfolio use is incidental. README can be short and operational.
+Built for the author and a small team of agents. A wider pilot is possible but not required. The repo is public on GitHub, but the project is **not** designed around an imagined recruiter or interviewer — portfolio use is incidental. README can be short and operational.
 
 ## Stack
 
@@ -14,7 +14,7 @@ Built for me and my team. A supervisor may see it; a small pilot is possible. Th
 - React + Vite + TypeScript
 - Tailwind CSS. The existing partial mockup at `~/Projects/helpdesk-automation/claude/` is loose inspiration for how the frontend is structured and styled — reference it for layout patterns and visual feel, not as a source of truth. No obligation to mirror its tokens, class names, or component breakdown.
 - TanStack Query for caching, prefetching, optimistic updates
-- shadcn/ui (Radix primitives + Tailwind styles, copied into the repo). Chosen specifically because Radix's ARIA correctness matters for a teammate's screen-reader use, not as a styling preference.
+- shadcn/ui (Radix primitives + Tailwind styles, copied into the repo). Chosen specifically because Radix's ARIA correctness matters for screen-reader users on the team, not as a styling preference.
 
 **Backend**
 - Node + TypeScript
@@ -40,7 +40,7 @@ In local development, simulate a small randomized latency on backend calls (e.g.
 
 ## Accessibility
 
-A teammate is partially blind and uses a screen reader. In ServiceNow today, they have to tab many times to land on the right field, or take stabs at clicking while heavily zoomed in. The new tool must not reproduce this. Concrete targets:
+An accessibility-first user is part of the target audience — partially-sighted, heavy keyboard navigation, screen reader, large browser zoom. In the legacy tool today, that looks like tabbing many times to land on the right field, or taking stabs at clicking while heavily zoomed in. The new tool must not reproduce this. Concrete targets:
 
 - Strong, high-contrast focus rings that survive heavy browser zoom
 - Logical tab order; skip links to bypass long sequences
@@ -49,7 +49,7 @@ A teammate is partially blind and uses a screen reader. In ServiceNow today, the
 - No hover-only interactions
 - ARIA correctness comes from Radix/shadcn primitives, not rolled by hand
 
-A dedicated session to inventory the specific friction points the teammate hits is still on the to-do list.
+A dedicated session to inventory the specific friction points is still on the to-do list.
 
 ## MVP scope
 
@@ -71,7 +71,7 @@ Out of MVP:
 - **#6 — Knowledge base** (cut entirely; the real system has a portal-side KB element we are not replicating)
 - KB search (was bundled with KB)
 - Anything portal-side / non-agent-facing
-- Live chat / virtual agent equivalents — observed in the current ServiceNow setup (used 2–3 times/month against hundreds-to-thousands of tickets), but not in scope here unless explicitly added later
+- Live chat / virtual agent equivalents — observed in the legacy tool (used a couple times a month against hundreds-to-thousands of tickets), but not in scope here unless explicitly added later
 
 ## Mock data — strict rules
 
