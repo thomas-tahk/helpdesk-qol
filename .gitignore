@@ -39,3 +39,6 @@ pgdata/
 
 # Claude local
 .claude/settings.local.json
+
+# Superpowers brainstorming mockups
+.superpowers/
