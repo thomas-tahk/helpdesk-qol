@@ -2,6 +2,8 @@
 
 **Status:** Draft. Brainstorming session paused 2026-05-14 before the "propose approaches" step. This document captures what's settled, what's proposed-but-unconfirmed, and what's still open. When the session resumes, continue from §5.
 
+> **2026-05-19 update — build-first pivot.** §5 defaults are no longer treated as a gate; decisions in that section are made when we hit them in code. The "propose approaches" step is deferred to the **Phase 2 Request unified view**, where design risk is real. Slice 0 (a minimum clickable Incident view) is specified in `2026-05-19-slice-0-walking-skeleton.md`. §3 / §4 locked decisions still stand. §6 open items are revisited in Phase 2 brainstorming, not before.
+
 ---
 
 ## 1. Project framing
