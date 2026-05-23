@@ -16,6 +16,19 @@ app.use('/*', async (c, next) => {
 
 app.get('/health', (c) => c.json({ ok: true }))
 
+app.get('/incidents', (c) => {
+  const summaries = incidents.map((i) => ({
+    id: i.id,
+    shortDescription: i.shortDescription,
+    state: i.state,
+    priority: i.priority,
+    caller: i.caller,
+    assignedTo: i.assignedTo,
+    openedAt: i.openedAt,
+  }))
+  return c.json(summaries)
+})
+
 app.get('/incidents/:id', (c) => {
   const id = c.req.param('id')
   const incident = incidents.find((i) => i.id === id)

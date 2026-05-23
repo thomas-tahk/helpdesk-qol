@@ -22,3 +22,13 @@ export interface Incident {
   openedAt: string;
   workNotes: WorkNote[];
 }
+
+export interface IncidentSummary {
+  id: string;
+  shortDescription: string;
+  state: IncidentState;
+  priority: 1 | 2 | 3 | 4 | 5;
+  caller: string;
+  assignedTo: string;
+  openedAt: string;
+}

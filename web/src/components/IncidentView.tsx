@@ -1,15 +1,16 @@
 import { useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { fetchIncident } from '@/lib/api';
 import { registerHotkey } from '@/lib/hotkeys';
 import type { Incident, WorkNote } from '@/types';
 
-const INCIDENT_ID = 'INC0010042';
-
 export function IncidentView() {
+  const { id } = useParams<{ id: string }>();
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ['incident', INCIDENT_ID],
-    queryFn: () => fetchIncident(INCIDENT_ID),
+    queryKey: ['incident', id],
+    queryFn: () => fetchIncident(id!),
+    enabled: !!id,
   });
 
   const composerRef = useRef<HTMLTextAreaElement>(null);
