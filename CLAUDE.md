@@ -81,6 +81,21 @@ Out of MVP:
 - Seed-data work happens in **separate Claude Code sessions** — fresh `claude` process started in this repo, no `/resume` from any session where the real system was discussed in detail. Build seed scripts from generic schema specs, not from screenshots or pasted real examples. Wariness about training-data leakage here is earned, not paranoid.
 - If real ticket text, real names, or anything that looks copied from the real system surfaces mid-session (paste, screenshot, recall), do not write it to disk. Flag it and ask before continuing.
 
+### Design-reference carve-out
+
+Public-portal surface captures of the existing customer-facing entry pages (e.g. the unauthenticated `/esc` portal) may be stored under `docs/design-reference/` strictly as visual reference for the redesign. They must:
+
+- show only the public surface — navigation, section labels, blank/empty forms, layout, branding affordances
+- contain no real ticket text, no real ticket IDs, no real submitter or agent names, no content reached by drilling into a specific record
+- be reviewed by hand before committing to confirm no real data is visible (including in tooltips, autofill, or browser chrome)
+
+What stays prohibited under this carve-out:
+- Agent-side / internal UI captures
+- Any view of a specific ticket, user record, or search result
+- Anything that reproduces real-system text verbatim
+
+Sessions viewing `docs/design-reference/` are still subject to the seed-data wall: don't write or edit seed data in the same session you've opened the design-reference images, and don't `/resume` from such a session into seed work.
+
 ## Working norms with Claude
 
 The pacing rule, verbatim: **"fastest I can be without oversight being taken from me."**
